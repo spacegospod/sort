@@ -14,6 +14,9 @@
 # Dependency directories (remove the comment below to include it)
 # vendor/
 
+# Package directory
+pkg/**/*
+
 # IntelliJ files
 *.iml
 .idea/**/*
