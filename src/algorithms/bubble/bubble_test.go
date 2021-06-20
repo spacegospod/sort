@@ -1,4 +1,4 @@
-package selection
+package bubble
 
 import (
 	"sort/src/testutil"
