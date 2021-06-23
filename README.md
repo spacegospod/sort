@@ -1,2 +1,2 @@
 # sort
-Basic sorting algorithms in golang
+Basic sorting algorithms in Go
