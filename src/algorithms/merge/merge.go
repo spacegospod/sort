@@ -15,29 +15,22 @@ func Sort(inputSlice []int, c comparator.Comparator) []int {
 }
 
 func merge(a, b []int, c comparator.Comparator) []int {
-	i, j, k := 0, 0, 0
+	i, j := 0, 0
 	merged := make([]int, len(a) + len(b))
-	for i < len(a) && j < len(b) {
-		if c(a[i], b[j]) >= 0 {
+	for k := 0; k < len(merged); k++ {
+		if i == len(a) {
+			merged[k] = b[j]
+			j++
+		} else if j == len(b) {
+			merged[k] = a[i]
+			i++
+		} else if c(a[i], b[j]) >= 0 {
 			merged[k] = a[i]
 			i++
 		} else {
 			merged[k] = b[j]
 			j++
 		}
-		k++
-	}
-
-	for i < len(a) {
-		merged[k] = a[i]
-		i++
-		k++
-	}
-
-	for j < len(b) {
-		merged[k] = b[j]
-		j++
-		k++
 	}
 
 	return merged
