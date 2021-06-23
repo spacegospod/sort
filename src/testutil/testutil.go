@@ -50,7 +50,7 @@ func TestSortTwoElements(s Sort, t *testing.T) {
 
 func TestSortEqualElements(s Sort, t *testing.T) {
 	testEquality(s(datasets.EqualElements(), comparator.Asc), datasets.EqualElements(), t)
-	testEquality(s(datasets.EqualElements(), comparator.Asc), datasets.EqualElements(), t)
+	testEquality(s(datasets.EqualElements(), comparator.Desc), datasets.EqualElements(), t)
 }
 
 func TestSortUniqueElements(s Sort, t *testing.T) {
