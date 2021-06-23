@@ -1,15 +1,14 @@
 package comparator
 
 // Comparator function
-// Returns a value greater than 0 if the parameters are in sorted order.
-// Returns a value less than 0 if the parameters are not in sorted order.
-// Returns 0 if the two parameters are equal
-type Comparator func(int, int) int
+// Returns true if the values are in order or if they are equal
+// Returns false if the values are not in order
+type Comparator func(int, int) bool
 
-func Asc(a, b int) int {
-	return b - a
+func Asc(a, b int) bool {
+	return a < b
 }
 
-func Desc(a, b int) int {
-	return a - b
+func Desc(a, b int) bool {
+	return a > b
 }
