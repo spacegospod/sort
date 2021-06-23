@@ -23,7 +23,7 @@ func partition(inputSlice []int, c comparator.Comparator) int {
 	i, j := 1, len(inputSlice) - 1
 
 	for i < j {
-		if c(pivot, inputSlice[i]) < 0 {
+		if !c(pivot, inputSlice[i]) {
 			i++
 		} else {
 			inputSlice[i], inputSlice[j] = inputSlice[j], inputSlice[i]
@@ -31,7 +31,7 @@ func partition(inputSlice []int, c comparator.Comparator) int {
 		}
 	}
 
-	if c(pivot, inputSlice[i]) < 0 {
+	if !c(pivot, inputSlice[i]) {
 		inputSlice[0], inputSlice[i] = inputSlice[i], inputSlice[0]
 	}
 	return i

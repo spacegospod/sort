@@ -24,7 +24,7 @@ func merge(a, b []int, c comparator.Comparator) []int {
 		} else if j == len(b) {
 			merged[k] = a[i]
 			i++
-		} else if c(a[i], b[j]) >= 0 {
+		} else if c(a[i], b[j]) {
 			merged[k] = a[i]
 			i++
 		} else {
